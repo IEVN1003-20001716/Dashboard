@@ -27,9 +27,15 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/scripts.js",
+              "src/assets/assets/demo/chart-area-demo.js",
+              "src/assets/assets/demo/chart-bar-demo.js",
+              "src/assets/js/datatables-simple-demo.js"
+            ]
           },
           "configurations": {
             "production": {
