@@ -1,0 +1,147 @@
+<div class="container-fluid py-4">
+  <div class="row justify-content-center">
+    <div class="col-12" style="max-width: 1200px;">
+      <!-- Header -->
+      <div class="bg-purple text-yellow p-4 rounded-top">
+        <h1 class="text-center mb-2">Usuarios</h1>
+        <p class="text-center text-light-yellow mb-0">Gestiona los usuarios del sistema</p>
+      </div>
+
+      <!-- Contenido principal -->
+      <div class="bg-light-purple rounded-bottom shadow p-4">
+        <!-- Filtro y botones -->
+        <div class="row mb-4 align-items-center">
+          <!-- Buscador -->
+          <div class="col-12 col-md-6 mb-3 mb-md-0">
+            <div class="input-group">
+              <span class="input-group-text bg-yellow text-purple">
+                <i class="bi bi-search"></i>
+              </span>
+              <input
+                [(ngModel)]="listFilter"
+                type="search"
+                class="form-control"
+                placeholder="Buscar usuarios..."
+              />
+            </div>
+          </div>
+
+          <!-- Botones -->
+          <div class="col-12 col-md-6">
+            <div class="d-flex flex-column flex-sm-row gap-2 justify-content-md-end">
+              <button
+                class="btn btn-purple text-yellow d-flex align-items-center justify-content-center gap-2"
+                (click)="showImage()"
+              >
+                <i class="bi bi-eye"></i>
+                {{ muestraImg ? 'Ocultar' : 'Mostrar' }} Contraseña
+              </button>
+              <button
+                class="btn btn-yellow text-purple d-flex align-items-center justify-content-center gap-2"
+                [routerLink]="['/usuario/agregar']"
+              >
+                <i class="bi bi-plus-circle"></i>
+                Agregar Usuario
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla -->
+        <div class="table-responsive">
+          <table class="table table-hover" *ngIf="dataSource && dataSource.length > 0">
+            <thead class="bg-yellow text-purple">
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Rol</th>
+                <th *ngIf="muestraImg">Contraseña</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let usuario of dataSource | usuarioFilter: listFilter">
+                <td>{{ usuario?.id }}</td>
+                <td>{{ usuario?.nombre | uppercase }}</td>
+                <td>{{ usuario?.correo }}</td>
+                <td>{{ usuario?.rol }}</td>
+                <td *ngIf="muestraImg">{{ usuario?.contrasena }}</td>
+                <td>
+                  <div class="d-flex flex-column flex-sm-row gap-2">
+                    <button
+                      class="btn btn-sm btn-yellow text-purple d-flex align-items-center justify-content-center gap-1"
+                      (click)="editarUsuario(usuario.id)"
+                    >
+                      <i class="bi bi-pencil"></i>
+                      Editar
+                    </button>
+                    <button
+                      class="btn btn-sm btn-dark-purple text-yellow d-flex align-items-center justify-content-center gap-1"
+                      (click)="eliminarUsuario(usuario.id, usuario.nombre)"
+                    >
+                      <i class="bi bi-trash"></i>
+                      Eliminar
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Estado vacío -->
+          <div *ngIf="!dataSource || dataSource.length === 0" class="text-center py-5">
+            <i class="bi bi-inbox display-1 text-secondary"></i>
+            <h3 class="h5 mt-3">No hay usuarios registrados</h3>
+            <p class="text-muted">Comienza agregando un nuevo usuario al sistema.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.bg-purple {
+  background-color: #6a0dad;
+}
+
+.text-yellow {
+  color: #ffd700;
+}
+
+.text-light-yellow {
+  color: #fffacd;
+}
+
+.bg-light-purple {
+  background-color: #e6e6fa;
+}
+
+.btn-purple {
+  background-color: #6a0dad;
+  border-color: #6a0dad;
+}
+
+.btn-purple:hover {
+  background-color: #5c0c9d;
+}
+
+.btn-yellow {
+  background-color: #ffd700;
+  border-color: #ffd700;
+}
+
+.btn-yellow:hover {
+  background-color: #ffc300;
+}
+
+.btn-dark-purple {
+  background-color: #4b0082;
+  border-color: #4b0082;
+}
+
+.btn-dark-purple:hover {
+  background-color: #3a0070;
+}
+</style>

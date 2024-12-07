@@ -1,0 +1,9 @@
+// Personalización de variables de Bootstrap
+$pink-light: #f8e1f4;
+$purple-light: #e6e1f8;
+
+// Agregar a los colores del tema
+$theme-colors: (
+  "soft-pink": $pink-light,
+  "soft-purple": $purple-light
+); 

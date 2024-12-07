@@ -1,26 +1,93 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" routerLink="">Admin</a>
+    <a class="navbar-brand ps-3">Admin</a>
+     <!-- Logo Section -->
+     <div class="sb-sidenav-logo text-center py-1">
+        <img src="../../../Logo.png" alt="Logo" class="img-fluid" style="max-height: 80px;">
+    </div>
     <!-- Sidebar Toggle-->
-    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
+        <i class="fas fa-bars"></i>
+    </button>
     <!-- Navbar Search-->
     <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
         <div class="input-group">
             <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-            <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+            <button class="btn btn-primary" id="btnNavbarSearch" type="button">
+                <i class="fas fa-search"></i>
+            </button>
         </div>
     </form>
-    <!-- Navbar-->
-    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#!">Settings</a></li>
-                <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="">Logout</a></li>
-            </ul>
-        </li>
-    </ul>
-  </nav>
-  
+   <!-- Navbar -->
+<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+    <li class="nav-item">
+        <button class="btn btn-danger btn-sm" routerLink="/regis">
+            <i class="fas fa-sign-out-alt me-2"></i> Logout
+        </button>
+    </li>
+</ul>
+</nav>
+
+<!-- Custom CSS for Navbar -->
+<style>
+    /* Global Styles for Navbar */
+    .navbar {
+        background-color: #1c1f27; /* Darker shade for modern look */
+        border-bottom: 2px solid #333; /* Subtle border for separation */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    }
+
+    .navbar-brand {
+        font-family: 'Roboto', sans-serif;
+        color: #ffffff !important;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        color: #f4f4f4 !important;
+        font-weight: 500;
+        padding: 10px 15px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover,
+    .navbar-nav .nav-item .nav-link:focus {
+        color: #f44336 !important;
+        background-color: #333;
+        border-radius: 5px;
+    }
+
+    .input-group input {
+        border-radius: 20px; /* Rounded corners for search input */
+    }
+
+    .input-group button {
+        background-color: #f44336; /* Modern red button */
+        border-radius: 0 20px 20px 0; /* Rounded button edges */
+        border: none;
+    }
+
+    .dropdown-menu {
+        background-color: #2c2f3b; /* Dark background for dropdown */
+        border-radius: 10px;
+    }
+
+    .dropdown-item {
+        color: #f4f4f4 !important;
+        padding: 10px 15px;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+        background-color: #f44336; /* Hover effect for dropdown */
+        color: #ffffff !important;
+        border-radius: 5px;
+    }
+
+    /* Google Fonts (Roboto) */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap');
+</style>

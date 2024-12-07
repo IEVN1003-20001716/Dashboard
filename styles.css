@@ -1,0 +1,14 @@
+/* Estilos personalizados para complementar Bootstrap */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Si quieres usar estos colores en más lugares, puedes crear clases personalizadas */
+.bg-soft-pink-purple {
+    background: linear-gradient(135deg, #f8e1f4 0%, #e6e1f8 100%);
+}
+
+/* Para textos */
+.text-soft-purple {
+    color: #9b8bb4;
+}

@@ -1,0 +1,88 @@
+<div class="container py-4">
+  <div class="card shadow-lg p-6 mx-auto" style="max-width: 1200px; background-color: #f9f6fc; border-radius: 15px;">
+    <h1 class="text-center mb-6" style="font-size: 1.75rem; font-weight: bold; color: #6a1b9a;">Modificar Administrador</h1>
+    
+    <form [formGroup]="formGroup" (ngSubmit)="modificar()">
+      <!-- ID -->
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-2" style="color: #6a1b9a;">ID</label>
+        <input
+          type="text"
+          formControlName="id"
+          class="form-control px-3 py-2 border rounded-md"
+          placeholder="ID"
+          style="border-color: #d1c4e9;"
+        />
+      </div>
+
+      <!-- Nombre -->
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-2" style="color: #6a1b9a;">Nombre</label>
+        <input
+          type="text"
+          formControlName="nombre"
+          class="form-control px-3 py-2 border rounded-md"
+          placeholder="Nombre"
+          style="border-color: #d1c4e9;"
+        />
+      </div>
+
+      <!-- Correo -->
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-2" style="color: #6a1b9a;">Correo</label>
+        <input
+          type="email"
+          formControlName="correo"
+          class="form-control px-3 py-2 border rounded-md"
+          placeholder="Correo electrónico"
+          style="border-color: #d1c4e9;"
+        />
+      </div>
+
+      <!-- Contraseña -->
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-2" style="color: #6a1b9a;">Contraseña</label>
+        <input
+          type="password"
+          formControlName="contrasena"
+          class="form-control px-3 py-2 border rounded-md"
+          placeholder="Contraseña"
+          style="border-color: #d1c4e9;"
+        />
+      </div>
+
+      <!-- Rol -->
+      <div class="mb-6">
+        <label class="block text-sm font-bold mb-2" style="color: #6a1b9a;">Rol</label>
+        <select
+          formControlName="rol"
+          class="form-control px-3 py-2 border rounded-md"
+          style="border-color: #d1c4e9;"
+        >
+          <option value="">Seleccione un rol</option>
+          <option value="admin">Administrador</option>
+          <option value="user">Usuario</option>
+        </select>
+      </div>
+
+      <!-- Botones -->
+      <div class="flex justify-end gap-4">
+        <button
+          type="submit"
+          class="btn px-4 py-2"
+          style="background-color: #6a1b9a; color: #fff; border-radius: 8px;"
+        >
+          Actualizar
+        </button>
+        <button
+          type="button"
+          class="btn px-4 py-2"
+          style="background-color: #fbc02d; color: #fff; border-radius: 8px;"
+          [routerLink]="['/usuario']"
+        >
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

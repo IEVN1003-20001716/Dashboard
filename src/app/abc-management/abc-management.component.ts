@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './abc-management.component.css'
 })
 export class AbcManagementComponent {
-
+  
 }
